@@ -30,9 +30,3 @@ When reversed digits produce values like `"021"`, converting to `int` gives `21`
 
 - Time: `O(d)`, where `d` is the number of digits.
 - Space: `O(d)` because of string creation.
-
-**What Was Wrong In The Old Version**
-
-- It compared a character with an integer: `reversed_digit[i] == 0` should have been character `'0'` if needed.
-- The loop was unnecessary.
-- `return` inside a loop can cause premature exit in some versions of the code.
