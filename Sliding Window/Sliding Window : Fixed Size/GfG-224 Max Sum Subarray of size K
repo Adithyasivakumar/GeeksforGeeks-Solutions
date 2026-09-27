@@ -1,0 +1,19 @@
+# Standard Approach
+
+class Solution:
+    def maxSubarraySum(self, arr, k):
+        
+        if len(arr) < k:
+            return -1
+        
+        current_window = sum(arr[:k])
+        
+        max_sum = current_window
+        
+        for i in range(k, len(arr)):
+            
+            current_window = current_window + arr[i] - arr[i - k]
+            
+            max_sum = max(max_sum, current_window)
+            
+        return max_sum
